@@ -2,7 +2,8 @@ const container = document.querySelector('#container');
 const square = document.querySelector('.square');
 const change = document.querySelector('.select');
 document.addEventListener('DOMContentLoaded',function(){
-    makeGrid(16,16)
+    makeGrid(16,16);
+    colorBlack();
 })
 
 function getSize(){
@@ -31,8 +32,16 @@ function colorBlack(){
     container.addEventListener('mouseover', function(e){
      if(e.target.classList.contains('square')){
              e.target.style.cssText = 'background-color: black' 
-     }; 
+      }; 
     });
+}
+
+function randomColor(){
+    container.addEventListener('mouseover', function(e){
+        if(e.target.classList.contains('square')){
+                e.target.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)` 
+         }; 
+       });
 }
 
 function clearBoard(){
@@ -42,5 +51,5 @@ function clearBoard(){
 
 change.addEventListener('click', () => {
     container.innerHTML = "";
-    getSize()
+    getSize();
 });
