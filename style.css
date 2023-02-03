@@ -3,13 +3,35 @@
     --grid-cols: 1;
 }
 
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
 #container {
     display:grid;
+    height: 600px;
+    width: 600px;
+    border: solid black;
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
 }
 
-.square {
-    border: 1px solid black;
-    padding: 1em
+
+.btns {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 600px;
+    margin-top: 20px;
+}
+
+.btns,button {
+    padding: 15px;
 }
