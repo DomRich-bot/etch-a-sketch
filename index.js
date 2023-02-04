@@ -1,10 +1,11 @@
 const container = document.querySelector('#container');
 const square = document.querySelector('.square');
 const change = document.querySelector('.select');
+
 document.addEventListener('DOMContentLoaded',function(){
-    makeGrid(16,16);
+    makeGrid(25,25);
     colorBlack();
-})
+});
 
 function getSize(){
     let input = prompt('Choose a board size');
@@ -17,7 +18,7 @@ function getSize(){
         let cols = input;
         makeGrid(rows,cols)
     }
-}
+};
  
 function makeGrid(rows,cols) {
     container.style.setProperty('--grid-rows',rows);
@@ -26,28 +27,29 @@ function makeGrid(rows,cols) {
         let cell = document.createElement('div');
         container.appendChild(cell).className = 'square';
     };
-}
+};
+
 
 function colorBlack(){
     container.addEventListener('mouseover', function(e){
-     if(e.target.classList.contains('square')){
-             e.target.style.cssText = 'background-color: black' 
-      }; 
+        if(e.target.classList.contains('square')){
+                e.target.style.cssText = 'background-color: black' 
+        }; 
     });
-}
+};
 
 function randomColor(){
     container.addEventListener('mouseover', function(e){
         if(e.target.classList.contains('square')){
                 e.target.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)` 
-         }; 
-       });
-}
+        }; 
+    });
+};
 
 function clearBoard(){
     container.innerHTML = "";
-    makeGrid(16,16);
-}
+    makeGrid(25,25);
+};
 
 change.addEventListener('click', () => {
     container.innerHTML = "";

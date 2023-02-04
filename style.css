@@ -8,17 +8,24 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color: gainsboro;
 }
 
 h1 {
     margin-bottom: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 70px;
+    font-weight: 900;
+    color: rgba(17, 17, 71, 0.884);
 }
 
 #container {
     display:grid;
-    height: 600px;
-    width: 600px;
-    border: solid black;
+    height: 800px;
+    width: 800px;
+    background-color: whitesmoke;
+    border: solid rgba(17, 17, 71, 0.884);
+    border-radius: 4px;
     grid-template-columns: repeat(var(--grid-cols), 1fr);
     grid-template-rows: repeat(var(--grid-rows), 1fr);
 }
@@ -28,10 +35,42 @@ h1 {
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 600px;
+    width: 790px;
     margin-top: 30px;
 }
 
-.btns,button {
+.btns, button {
+    border-radius: 4px;
     padding: 15px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.btns, button:hover {
+    transform: scale(1.2);
+    transition-duration: .4s;
+}
+
+.black {
+    background-color: rgba(10, 10, 10, 0.918);
+    color: whitesmoke;
+    border: none;
+}
+
+.color {
+    background-color: rgba(255, 0, 0, 0.76);
+    color: rgb(17, 17, 71);
+    border: none;
+}
+
+.erase {
+    background-color: whitesmoke;
+    color: rgb(17, 17, 71);
+    border: none;
+}
+
+.select {
+    background-color: lightslategray;
+    color: rgb(17, 17, 71);
+    border: none;
 }
